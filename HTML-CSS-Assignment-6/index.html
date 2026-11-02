@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="An interactive personal portfolio demonstrating jQuery selectors, effects, DOM manipulation, and animations.">
+    <title>Assignment 6 | jQuery Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar container">
+            <a class="brand" href="#home">said Sanaullah<span>.</span></a>
+            <div class="nav-actions">
+                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="#gallery">Gallery</a>
+                <a class="nav-link" href="#skills">Skills</a>
+                <button id="lightTheme" class="theme-button" type="button">Light mode</button>
+                <button id="darkTheme" class="theme-button" type="button">Dark mode</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="home" class="hero section-card">
+            <div class="hero-copy">
+                <p class="eyebrow">WEB TECHNOLOGIES · ASSIGNMENT 6</p>
+                <h1 id="greeting">Welcome to My Portfolio</h1>
+                <h2 class="headline">Hello, I am Said Sanaullah Sadat</h2>
+                <p class="introduction">I am an IT student interested in web development, programming, and modern
+                    technologies. This portfolio demonstrates interactive features built with jQuery.</p>
+                <button id="changeGreeting" class="primary-button" type="button">Change greeting</button>
+            </div>
+            <div class="hero-art" aria-label="Abstract illustration of a laptop">
+                <div class="art-orbit orbit-one"></div>
+                <div class="art-orbit orbit-two"></div>
+                <div class="laptop">
+                    <div class="laptop-screen"><span>&lt;/&gt;</span><i></i><i></i><i></i></div>
+                    <div class="laptop-base"></div>
+                </div>
+                <div class="art-caption">Learning · Building · Improving</div>
+            </div>
+        </section>
+
+        <section id="about" class="section-card">
+            <div class="section-heading">
+                <p class="eyebrow">A LITTLE ABOUT ME</p>
+                <h2>About Me</h2>
+            </div>
+            <div id="aboutContent" class="about-content">
+                <p>I am a student who enjoys learning programming and developing creative web projects.</p>
+                <p id="status" class="status-pill">Currently learning jQuery!</p>
+                <h3>Fun facts about me</h3>
+                <ul id="funFacts" class="fact-list">
+                    <li>I enjoy learning new technologies.</li>
+                    <li>I am interested in web development.</li>
+                    <li>My goal is to become a skilled software developer.</li>
+                </ul>
+            </div>
+            <div class="button-row">
+                <button id="hideBtn" class="secondary-button" type="button">Hide</button>
+                <button id="showBtn" class="secondary-button" type="button">Show</button>
+                <button id="toggleBtn" class="secondary-button" type="button">Toggle</button>
+            </div>
+        </section>
+
+        <section id="gallery" class="section-card">
+            <div class="section-heading">
+                <p class="eyebrow">VISUAL INSPIRATION</p>
+                <h2>My Gallery</h2>
+                <p>Use the buttons to fade the gallery images in and out.</p>
+            </div>
+            <div class="gallery-grid">
+                <figure class="gallery-item">
+                    <img src="images/profile.svg" alt="Illustrated profile avatar">
+                    <figcaption>My profile</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="images/hobby.svg" alt="Illustration of a laptop and books">
+                    <figcaption>Learning and technology</figcaption>
+                </figure>
+            </div>
+            <div class="button-row">
+                <button id="fadeInBtn" class="secondary-button" type="button">Fade in</button>
+                <button id="fadeOutBtn" class="secondary-button" type="button">Fade out</button>
+                <button id="fadeToggleBtn" class="secondary-button" type="button">Fade toggle</button>
+            </div>
+        </section>
+
+        <section id="favorites" class="section-card">
+            <div class="section-heading">
+                <p class="eyebrow">GET TO KNOW ME</p>
+                <h2>My Favorites</h2>
+                <p>Click each heading to open or close its information panel.</p>
+            </div>
+            <div class="accordion-item">
+                <h3 class="slide-heading" tabindex="0" role="button" aria-expanded="false">My Favorite Music
+                    <span>+</span></h3>
+                <div class="slide-panel">
+                    <p>I enjoy listening to music during my free time because it helps me relax and focus.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="slide-heading" tabindex="0" role="button" aria-expanded="false">My Favorite Movie
+                    <span>+</span></h3>
+                <div class="slide-panel">
+                    <p>I enjoy movies that tell meaningful stories and teach valuable life lessons.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="slide-heading" tabindex="0" role="button" aria-expanded="false">My Favorite Subject
+                    <span>+</span></h3>
+                <div class="slide-panel">
+                    <p>Web Technologies is one of my favorite subjects because I can build things for the web.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section-card">
+            <div class="section-heading">
+                <p class="eyebrow">KEEP GROWING</p>
+                <h2>My Technical Skills</h2>
+                <p>Add a skill to the end or beginning of the list, or remove the last item.</p>
+            </div>
+            <ul id="skillList" class="skill-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Git and GitHub</li>
+            </ul>
+            <div class="skill-entry">
+                <label class="sr-only" for="newSkill">New technical skill</label>
+                <input type="text" id="newSkill" placeholder="Enter a new skill">
+                <div class="button-row">
+                    <button id="addSkillBtn" class="primary-button" type="button">Add skill</button>
+                    <button id="prependSkillBtn" class="secondary-button" type="button">Prepend skill</button>
+                    <button id="removeSkillBtn" class="danger-button" type="button">Remove last skill</button>
+                </div>
+                <p id="skillMessage" class="small-message" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <section id="social" class="section-card split-section">
+            <div>
+                <p class="eyebrow">FIND ME ONLINE</p>
+                <h2>Connect With Me</h2>
+                <p>My social link can be changed dynamically with jQuery's <code>.attr()</code> method.</p>
+            </div>
+            <div class="social-action">
+                <a id="socialLink" class="social-link" href="https://github.com/said2502" target="_blank"
+                    rel="noopener noreferrer">Visit my GitHub</a>
+                <button id="changeLinkBtn" class="secondary-button" type="button">Change link destination</button>
+            </div>
+        </section>
+
+        <section id="contact" class="section-card">
+            <div class="section-heading">
+                <p class="eyebrow">TRY IT LIVE</p>
+                <h2>Live Form Interaction</h2>
+                <p>Type in either field and see the preview update immediately.</p>
+            </div>
+            <form id="contactForm">
+                <div class="form-grid">
+                    <div>
+                        <label for="userName">Name</label>
+                        <input type="text" id="userName" placeholder="Enter your name">
+                    </div>
+                    <div>
+                        <label for="userEmail">Email</label>
+                        <input type="email" id="userEmail" placeholder="Enter your email">
+                    </div>
+                </div>
+            </form>
+            <div class="live-preview" aria-live="polite">
+                <h3>Live preview</h3>
+                <p id="liveName">Your name will appear here.</p>
+                <p id="liveEmail">Your email will appear here.</p>
+            </div>
+        </section>
+
+        <section id="animation" class="section-card">
+            <div class="section-heading">
+                <p class="eyebrow">A LITTLE MOTION</p>
+                <h2>Animate My Skills</h2>
+                <p>Press the button to animate the bars to their target widths, then reset them.</p>
+            </div>
+            <div class="animated-skill">
+                <div class="bar-label"><span>HTML</span><strong>90%</strong></div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="90%"></div>
+                </div>
+            </div>
+            <div class="animated-skill">
+                <div class="bar-label"><span>CSS</span><strong>75%</strong></div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="75%"></div>
+                </div>
+            </div>
+            <div class="animated-skill">
+                <div class="bar-label"><span>JavaScript</span><strong>60%</strong></div>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-width="60%"></div>
+                </div>
+            </div>
+            <button id="animateSkillsBtn" class="primary-button" type="button">Animate my skills</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Sayed Sanaullah Sadat · IT 2502 · Web Technologies Assignment 6</p>
+    </footer>
+</body>
+
+</html>
